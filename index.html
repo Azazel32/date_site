@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Choice</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe4e1;
+            font-family: Arial, sans-serif;
+        }
+
+        .romantic-gif {
+            width: 300px;
+            height: 300px;
+            background: url('https://media.giphy.com/media/l4FGwHEUCGILzWyZ2/giphy.gif') no-repeat center center;
+            background-size: cover;
+            margin-bottom: 20px;
+        }
+        
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .yes-button {
+            background-color: #ff69b4;
+            color: white;
+        }
+
+        .yes-button:hover {
+            background-color: #ff1493;
+        }
+
+        .no-button {
+            background-color: #f08080;
+            color: white;
+        }
+
+        .no-button:hover {
+            background-color: #cd5c5c;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://giphy.com/embed/vFKqnCdLPNOKc" width="480" height="360" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><h3> Czy mogę włamać się do twojego serca???</h3></p>
+    <div class="button-container">
+        <button class="yes-button" onclick="goToPage()">Tak</button>
+        <button class="no-button" onclick="moveNoButton(this)">Nie</button>
+    </div>
+
+    <script>
+        function goToPage() {
+            window.location.href = "index2.html"; // Change to the desired page URL
+        }
+
+        function moveNoButton(button) {
+            const randomX = Math.floor(Math.random() * (window.innerWidth - button.offsetWidth));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - button.offsetHeight));
+
+            button.style.position = "absolute";
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
+        }
+    </script>
+</body>
+</html>
